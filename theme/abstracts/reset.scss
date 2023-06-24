@@ -1,0 +1,177 @@
+/* Definimos las Custom properties */ 
+:root {
+ 
+    /* Colores */
+    --primary-color: #1a1a1c;
+    --secundary-color: #ffffff;
+
+      //input color autoComplete 
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+      }
+    
+
+  }
+  
+  /*Las adaptamos al modo oscuro */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-color: #94ccff;
+      --secundary-color: #003352;
+    }
+  }
+  
+  /*Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+  @media (prefers-contrast: hight) {
+    :root {
+      --primary-color: #000000;
+      --secundary-color: #fafafa;
+    }
+  }
+  
+  /* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+  /* cambiar * por etiquetas que use animadas */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+  
+  /* Reseteamos los margin y paddings de todas las etiquetas */
+*,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+  *::before,
+  *::after {
+    display: block;
+  }
+  
+  /* Evitamos problemas con las imagenes */
+  img,
+  picture,
+  video,
+  iframe,
+  figure {
+    max-width: 100%;
+    width: 100%;
+    display: block;
+  }
+  
+  /* Reseteamos los enlaces para funcionar como cajas... */
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+  }
+  /* ... excepto los que se encuentran en párrafos */
+  p a {
+    display: inline;
+  }
+  
+  /* Quitamos los puntos de los <li> */
+  li {
+    list-style-type: none;
+  }
+  
+  /* (Opcional) Configuramos anclas suaves */
+  html {
+    scroll-behavior: smooth;
+    // font-size: max(16px,0.833vw);
+  }
+  
+  /* Desactivamos estilos por defecto de las principales etiquetas de texto */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  a,
+  strong,
+  blockquote,
+  i,
+  b,
+  u,
+  em {
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+  /* Evitamos problemas con los pseudoelementos de quotes */
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  
+  /* (Opcional) Configuramos el texto que seleccionamos */
+  ::selection {
+    // background-color: var(--primary-color);
+    // color: var(--secundary-color);
+  }
+  
+  /* Nivelamos problemas de tipografías y colocación de formularios */
+  form,
+  input,
+  textarea,
+  select,
+  button,
+  label {
+    font-family: inherit;
+    font-size: inherit;
+    hyphens: auto;
+    background-color: transparent;
+    color: inherit;
+    display: block;
+  }
+  
+  /* Reseteamos las tablas */
+  table,
+  tr,
+  td {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  /* Evitamos problemas con los SVG */
+  svg {
+    width: 100%;
+    display: block;
+    fill: currentColor;
+  }
+  
+  /* Configuramos la tipografía para toda la web */
+  body {
+    position: relative;
+    font-weight: 400;
+    min-height: 100vh;
+    font-size: 100%;
+    font-family:  'Syncopate', sans-serif;
+    color: #ffffff;
+    background-color:  var(--primary-color);
+    line-height: 1.4em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.5s ease;
+    margin: 0;
+    padding: 0;
+  } 
